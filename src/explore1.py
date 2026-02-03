@@ -1,11 +1,12 @@
-import os
-import pandas as pd
+from pathlib import Path
 
-#list them in a list format row by row
+data_dir = Path('../data')
+for file in data_dir.glob('*.csv'):
+    print(file.name)
 
 
-data_folder = os.path.join('..', 'data')
-files = os.listdir(data_folder)
+print("\n**** All JSON files ****\n")
 
-files_list = [[file] for file in files]
-print(pd.DataFrame(files_list, columns=['Filename']))
+
+for file in data_dir.glob('*.json'):
+    print(file.name)
